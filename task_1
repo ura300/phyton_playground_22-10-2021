@@ -1,0 +1,6 @@
+def check_numbers (list, n):
+    final_list = []
+    for i in list:
+        if i >= n:
+            final_list.append(i)
+    print(final_list)
