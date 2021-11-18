@@ -1,0 +1,38 @@
+test_list = [[4, 9, 2], [3, 5, 7], [8, 1, 6]]
+
+def detector (list):
+    if sum(list[0]) == sum(list[1]) == sum(list[2]):
+        string_condition = True
+    else:
+        string_condition = False
+
+    sum1 = 0
+    sum2 = 0
+    sum3 = 0
+    diagonal_1_sum = 0
+    diagonal_2_sum = 0
+
+    for i in range(len(list)):
+        sum1 += list[i][0]
+        sum2 += list[i][1]
+        sum3 += list[i][2]
+
+        diagonal_1_sum += list[i][i]
+        diagonal_2_sum += list[i][len(list) - 1 - i]
+
+    if sum1 == sum2 == sum3:
+        column_condition = True
+    else:
+        column_condition = False
+
+    if diagonal_1_sum == diagonal_2_sum:
+        diagonals_condition = True
+    else:
+        diagonals_condition = False
+
+    if (string_condition & column_condition & diagonals_condition):
+        print('Lo Shu squere')
+    else:
+        print('Not Lo Shu squere')
+
+detector(test_list)
